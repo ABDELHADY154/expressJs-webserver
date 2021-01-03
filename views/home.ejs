@@ -1,12 +1,9 @@
 <nav class="navbar navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="/">HADY</a>
+    <a class="navbar-brand" href="/home">HADY</a>
     <ul class="nav justify-content-end d-flex gap-3">
       <li class="nav-item">
-        <a class="btn btn-primary" href="/login">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="btn btn-info" href="/register">Register</a>
+        <a class="btn btn-danger" href="/logout">Logout</a>
       </li>
     </ul>
   </div>
@@ -16,8 +13,10 @@
   <div class="card text-center">
     <div class="card-header"></div>
     <div class="card-body">
-      <h5 class="card-title">Welcome to HADY web server</h5>
-      <a href="/register" class="btn btn-primary">Register Now</a>
+      <% if (user) { %>
+      <h5 class="card-title">Welcome <%= user.fullName %></h5>
+      <p>Your email is: <%= user.email %></p>
+      <% } %>
     </div>
     <div class="card-footer text-muted"></div>
   </div>
